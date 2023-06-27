@@ -32,7 +32,6 @@ public class FuncionesVectores {
 	
 	public static void pedirVector(int [] vector) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.println(vector);
 		for(int i=0;i<vector.length;i++) {
 			System.out.printf("Introduce el elemento %d: ",i+1);
 			vector[i]=teclado.nextInt();
@@ -40,7 +39,6 @@ public class FuncionesVectores {
 	}
 	public static void pedirVector(double[] vector) {
 		Scanner teclado = new Scanner(System.in);
-		System.out.println(vector);
 		for(int i=0;i<vector.length;i++) {
 			System.out.printf("Introduce el elemento %d: ",i+1);
 			vector[i]=teclado.nextDouble();
@@ -84,8 +82,48 @@ public class FuncionesVectores {
 		return suma/vector.length;
 	}
 
-	
+	public static void mostrarMenoresQue(int[] vector, int a) {
+		for (int i = 0; i < vector.length; i++) {
+			if(vector[i]<a) {
+				System.out.printf("%d ",vector[i]);
+			}
+		}
+	}
 
+	public static void mostrarEnIntervalo(int[] vector, int a, int b) {
+		for (int i = 0; i < vector.length; i++) {
+			if(vector[i]>=Math.min(a,b) && vector[i]<Math.max(a,b)) {
+				System.out.printf("%d ",vector[i]);
+			}
+		}
+		
+	}
+
+	public static void rotarIzq(int[] vector) {
+		int aux=vector[0];
+		
+//		for (int i=0; i<vector.length-1;i++) {
+//			vector[i]=vector[i+1];
+//		}
+		for (int i=1; i<vector.length;i++) {
+			vector[i-1]=vector[i];
+		}
+		vector[vector.length-1]=aux;
+	}
+
+	public static void rotarIzq(int[] vector, int veces) {
+		for (int i=0;i<veces;i++) {
+			rotarIzq(vector);
+		}
+	}
+
+	public static void rotarDcha(int [] vector) {
+		int aux=vector[vector.length-1];
+		for (int i=vector.length-1;i>0;i--) {
+			vector[i]=vector[i-1];
+		}
+		vector[0]=aux;
+	}
 
 	
 }
