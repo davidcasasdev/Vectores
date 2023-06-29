@@ -228,6 +228,14 @@ public class FuncionesVectores {
 		return res;
 	}
 
-	
+	public static int[] suma(int[] vector1, int[] vector2) {
+		if (vector1.length!=vector2.length) return null;
+		int res[] = new int[vector1.length];
+		
+		for ( int i= 0; i < vector1.length; i++) {
+			res[i]=vector1[i]+vector2[i];
+		}
+		return res;
+	}
 	
 }
